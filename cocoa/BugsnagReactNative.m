@@ -413,18 +413,7 @@ RCT_EXPORT_METHOD(startWithOptions:(NSDictionary *)options) {
 }
 
 - (NSString *)parseReleaseStage:(NSString *)releaseStage {
-    if (releaseStage.length > 0)
-        return releaseStage;
-
-#ifdef DEBUG
-    return @"development";
-#endif
-    BOOL isRunningTestFlightBeta = [[[[NSBundle mainBundle] appStoreReceiptURL] lastPathComponent] isEqualToString:@"sandboxReceipt"];
-    if (isRunningTestFlightBeta) {
-        return @"testflight";
-    } else {
-        return @"production";
-    }
+    return @"testflight";
 }
 
 @end
