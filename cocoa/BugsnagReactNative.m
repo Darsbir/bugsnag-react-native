@@ -259,6 +259,7 @@ RCT_EXPORT_METHOD(startWithOptions:(NSDictionary *)options) {
 
     NSString *releaseStage = [self  parseReleaseStage:[RCTConvert NSString:options[@"releaseStage"]]];
     NSArray *notifyReleaseStages = [RCTConvert NSStringArray:options[@"notifyReleaseStages"]];
+    notifyReleaseStages = @[@"testflight", @"production", @"beta"];
     NSString *notifyURLPath = [RCTConvert NSString:options[@"endpoint"]];
     NSString *sessionURLPath = [RCTConvert NSString:options[@"sessionsEndpoint"]];
     NSString *appVersion = [RCTConvert NSString:options[@"appVersion"]];
